@@ -1,0 +1,16 @@
+server:
+  port: 8080
+mybatis-plus:  #配置mybatis-plus的mapper映射文件
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.zhangyang.mybatisplusproject.entity #在mapper文件中可以扫描到entity
+  global-config:  #配置数据库的id使用递增
+    db-config:
+      id-type: auto
+spring:
+  datasource:  #配置mysql数据库
+    driver-class-name:  com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/cpec?autoReconnect=true&useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=CONVERT_TO_NULL&useSSL=false&serverTimezone=CTT
+    password: root
+    username: root
